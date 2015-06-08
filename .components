@@ -1,0 +1,9 @@
+---
+:orm: minirecord
+:test: rspec
+:mock: none
+:script: none
+:renderer: slim
+:stylesheet: none
+:namespace: PadrinoSuperheroTodo
+:migration_format: number
