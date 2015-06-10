@@ -6,6 +6,9 @@ module PadrinoSuperheroTodo
 
     enable :sessions
 
+    get '/' do
+      "Hello World!"
+    end
     ##
     # Caching support.
     #
