@@ -3,4 +3,5 @@ PadrinoSuperheroTodo::App.controllers :superheroes do
     @superheroes = Superhero.all
     render 'superheroes/index'
   end
+
 end
