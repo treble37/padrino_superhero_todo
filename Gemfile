@@ -23,8 +23,11 @@ gem 'rspec', :group => 'test'
 gem 'rack-test', :require => 'rack/test', :group => 'test'
 
 # Padrino Stable Gem
-gem 'padrino', '0.12.4'
+gem 'padrino', '0.12.5'
 gem 'padrino-sprockets', :require => "padrino/sprockets"
+
+gem 'grape'
+gem 'padrino-grape', github: "adamluzsi/padrino-grape"
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
 

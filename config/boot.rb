@@ -35,8 +35,21 @@ Bundler.require(:default, RACK_ENV)
 # Add your before (RE)load hooks here
 #
 Padrino.before_load do
+  #need Grape::Route for rake routes to work
+  class Grape::Route
+    def name
+      "APIv#{route_version}"
+    end
+    def request_methods
+      Set.new [route_method]
+    end
+    def original_path
+      route_path
+    end
+    def controller
+    end
+  end
 end
-
 ##
 # Add your after (RE)load hooks here
 #
