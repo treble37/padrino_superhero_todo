@@ -4,8 +4,4 @@ PadrinoSuperheroTodo::App.controllers :superheroes do
     render 'superheroes/index'
   end
 
-  post :create do
-
-  end
-
 end

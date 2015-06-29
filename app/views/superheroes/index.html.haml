@@ -1,0 +1,29 @@
+%h1 Superheroes 
+
+#superheroes
+  - if @superheroes.empty?
+    %h2 No superheroes to show
+  - else
+    - @superheroes.each do |superhero|
+      .age Age: #{superhero.age}
+      .name Superhero Name: #{superhero.superhero_name}
+
+%div#section{"ng-app"=>"superheroApp", "ng-controller"=>"superheroCtr"}
+  %form{"ng-submit"=>"superheroSubmit($resource)"}
+    %table
+      %tbody
+        %tr
+          %th SH Name
+          %th SH Age
+        %tr
+          %td
+            %input{"type"=>"text", "ng-model"=>"superheroName"}
+          %td
+            %input{"type"=>"text", "ng-model"=>"superheroAge"}
+        %tr
+          %td
+          %td
+            %input{"type"=>"submit", "value"=>"Add Superhero"}
+
+
+

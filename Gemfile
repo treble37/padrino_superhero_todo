@@ -16,7 +16,7 @@ gem 'rake'
 # Component requirements
 gem 'mini_record'
 gem 'sqlite3'
-gem 'slim'
+gem 'haml'
 
 # Test requirements
 gem 'rspec', :group => 'test'
