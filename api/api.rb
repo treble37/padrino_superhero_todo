@@ -1,6 +1,9 @@
 class Api < Grape::API
   include PadrinoGrape
 
+  format :json
+  default_format :json
+
   get :hello do
     { hello: "world"}.to_json
   end

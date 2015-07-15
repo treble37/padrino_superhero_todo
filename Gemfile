@@ -24,7 +24,9 @@ gem 'rack-test', :require => 'rack/test', :group => 'test'
 
 # Padrino Stable Gem
 gem 'padrino', '0.12.5'
-gem 'padrino-sprockets', :require => "padrino/sprockets"
+gem 'padrino-sprockets', :require => ['padrino/sprockets'], :git => 'git://github.com/nightsailer/padrino-sprockets.git'
+gem 'uglifier', '2.1.1'
+gem 'yui-compressor', '0.9.6'
 
 gem 'grape'
 gem 'padrino-grape', github: "adamluzsi/padrino-grape"

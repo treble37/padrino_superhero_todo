@@ -4,12 +4,12 @@ module PadrinoSuperheroTodo
     register Padrino::Mailer
     register Padrino::Helpers
     register Padrino::Sprockets
-    sprockets
+    sprockets :minify => (Padrino.env == :production)
 
     enable :sessions
 
     get '/' do
-      "Hello World!"
+      "Hello World Home Route!"
     end
     ##
     # Caching support.
