@@ -1,0 +1,16 @@
+%div#section{"ng-app"=>"superheroApp", "ng-controller"=>"superheroCtr"}
+  %form{"ng-submit"=>"superheroSubmit($resource)"}
+    %table
+      %tbody
+        %tr
+          %th SH Name
+          %th SH Age
+        %tr
+          %td
+            %input{"type"=>"text"}
+          %td
+            %input{"type"=>"text"}
+        %tr
+          %td
+          %td
+            %input{"type"=>"submit", "value"=>"Add Superhero"}

@@ -4,6 +4,8 @@ module PadrinoSuperheroTodo
     register Padrino::Mailer
     register Padrino::Helpers
     register Padrino::Sprockets
+    register Gon::Sinatra
+
     sprockets :minify => (Padrino.env == :production)
 
     enable :sessions

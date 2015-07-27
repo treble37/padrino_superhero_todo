@@ -1,18 +1,27 @@
 'use strict';
 
 (function(angular) {
-  function ApiCreate($resource) {
-
+  function ApiAction($resource) {
+    //return $resource('/admin/update_clinicaltrialgov_inclusion_list', 
+    //  { },
+    //  { update_inclusion_list: {
+    //    method: "POST",
+    //    isArray: false 
+    //    }
+    //  }
+    //);
   }
 
-  function superheroCtr($scope, ApiCreate) {
+  function superheroCtr($scope, ApiAction) {
     $scope.superheroSubmit = function() {
       console.log("hello");
-      ApiCreate.create({}, { superhero_name: $scope.superheroName, age: $scope.superheroAge });
+     // ApiAction.create({}, { superhero_name: $scope.superheroName, age: $scope.superheroAge });
     };
+    $scope.superheroes = gon.superheroes;
+    console.log($scope.superheroes);
   }
   
   var superheroApp = angular.module('superheroApp', ['ngResource']);
-  superheroApp.controller('superheroCtr', ['$scope', 'ApiCreate', superheroCtr]);
-  superheroApp.factory('ApiCreate', ['$resource', ApiCreate]);
+  superheroApp.controller('superheroCtr', ['$scope', 'ApiAction', superheroCtr]);
+  superheroApp.factory('ApiAction', ['$resource', ApiAction]);
 })(angular);

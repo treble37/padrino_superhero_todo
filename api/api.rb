@@ -4,8 +4,9 @@ class Api < Grape::API
   format :json
   default_format :json
 
-  get :hello do
-    { hello: "world"}.to_json
+  get '/' do
+    @superheroes = Superhero.all
+    @superheroes.to_json
   end
 
   post :create do

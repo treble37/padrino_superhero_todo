@@ -30,6 +30,11 @@ gem 'yui-compressor', '0.9.6'
 
 gem 'grape'
 gem 'padrino-grape', github: "adamluzsi/padrino-grape"
+gem 'httparty'
+gem 'gon-sinatra'
+
+gem 'pry'
+
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
 
