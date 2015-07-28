@@ -5,4 +5,19 @@
 // the compiled file.
 //
 
-//= require_tree .
+//= require jquery
+//= require angular
+//= require angular-animate
+//= require angular-aria
+//= require angular-cookies
+//= require angular-loader
+//= require angular-message-format
+//= require angular-messages
+//= require angular-mocks
+//= require angular-route
+//= require angular-resource
+//= require angular-route
+//= require angular-sanitize
+//= require angular-scenario
+//= require angular-touch
+//= require superhero_api

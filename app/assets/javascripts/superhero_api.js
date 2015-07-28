@@ -2,14 +2,14 @@
 
 (function(angular) {
   function ApiAction($resource) {
-    //return $resource('/admin/update_clinicaltrialgov_inclusion_list', 
-    //  { },
-    //  { update_inclusion_list: {
-    //    method: "POST",
-    //    isArray: false 
-    //    }
-    //  }
-    //);
+    return $resource('/api/', 
+      { },
+      { api_index: {
+        method: "GET",
+        isArray: false 
+        }
+      }
+    );
   }
 
   function superheroCtr($scope, ApiAction) {
@@ -17,7 +17,7 @@
       console.log("hello");
      // ApiAction.create({}, { superhero_name: $scope.superheroName, age: $scope.superheroAge });
     };
-    $scope.superheroes = gon.superheroes;
+    $scope.superheroes = ApiAction.api_index({}, {});
     console.log($scope.superheroes);
   }
   

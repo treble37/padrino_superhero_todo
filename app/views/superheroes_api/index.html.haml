@@ -5,11 +5,11 @@
         %tr
           %th SH Name
           %th SH Age
-        %tr
+        %tr{"ng-repeat" => "superhero in superheroes track by $index"}
           %td
-            %input{"type"=>"text"}
+            %input{"type"=>"text", "value" => "superhero['superhero_name']"}
           %td
-            %input{"type"=>"text"}
+            %input{"type"=>"text", "value" => "superhero['age']" }
         %tr
           %td
           %td

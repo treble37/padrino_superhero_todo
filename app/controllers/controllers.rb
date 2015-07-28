@@ -6,7 +6,6 @@ PadrinoSuperheroTodo::App.controllers :superheroes do
   end
 
   get :api_index do
-    gon.superheroes = HTTParty.get('http://localhost:3000/api/', {})
     render 'superheroes_api/index'
   end
 end
