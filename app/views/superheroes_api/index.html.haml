@@ -7,10 +7,11 @@
           %th SH Age
         %tr{"ng-repeat" => "superhero in superheroes track by $index"}
           %td
-            %input{"type"=>"text", "value" => "superhero['superhero_name']"}
+            %input{"type"=>"text", "value" => "{{superhero.superhero_name}}", "ng-model" => "superhero.superhero_name" }
           %td
-            %input{"type"=>"text", "value" => "superhero['age']" }
+            %input{"type"=>"text", "value" => "{{superhero.age}}", "ng-model" => "superhero.age" }
         %tr
           %td
+            %input{"type"=>"submit", "value"=>"Save Changes"}
           %td
-            %input{"type"=>"submit", "value"=>"Add Superhero"}
+            %input{"type"=>"button", "value"=>"Add Superhero", "ng-click" => "appendSuperheroFields()" }
