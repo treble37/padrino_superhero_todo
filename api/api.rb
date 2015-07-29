@@ -6,11 +6,11 @@ class Api < Grape::API
 
   get '/' do
     @superheroes = Superhero.all
-    @superheroes.to_json
+    @superheroes
   end
 
   post :create do
     @superhero = Superhero.create(superhero_name: params[:superhero_name], age: params[:age])
-    @superhero.to_json
+    @superhero
   end
 end
