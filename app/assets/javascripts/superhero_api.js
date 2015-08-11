@@ -2,28 +2,33 @@
 
 (function(angular) {
 
-  function ApiAction($resource, resourceParams) {
-    return $resource('/api/:Id',
-      { Id: "@Id" },
+  function ApiAction($resource) {
+    return $resource('/api/:id',
+      { id: "@id" },
       { 
+        get: {
+          method: "GET",
+          isArray: true
+        },
         update: {
         method: "PUT",
-        isArray: true 
+        isArray: true
+        },
+        create: {
+          method: "POST",
+          isArray: true
         }
       });
 
   }
 
 
-  function superheroCtr($scope, ApiAction, ResourceParameters) {
+  function superheroCtr($scope, ApiAction) {
     $scope.superheroSubmit = function() {
-     // ApiAction.create({}, { superhero_name: $scope.superheroName, age: $scope.superheroAge });
       angular.forEach($scope.superheroes, function(hero) {
-  //      ApiAction.create({}, { superhero_name: hero.superhero_name, age: hero.age }); 
       });
     };
     var heroes = ApiAction.query();
-   console.log(heroes); 
     $scope.superheroes = [];
     heroes.$promise.then(function(data) {
       angular.forEach(data, function(item) {
@@ -36,6 +41,25 @@
     $scope.appendSuperheroFields = function() {
       var i = $scope.superheroes.length + 1;
       $scope.superheroes.push({"id": i, age: "", superhero_name: "" })
+    }
+
+    $scope.updateSuperhero = function(id, name, age) {
+      var hero = ApiAction.get({ id: id }, function() {
+      });
+      var single_hero;
+      hero.$promise.then(function(data) {
+        angular.forEach(data, function(item) {
+          single_hero = item;
+          ApiAction.update(single_hero, {});
+        });
+      }, function(data) {
+        //if error then...
+      });
+    }
+
+    $scope.createSuperhero = function(name, age) {
+      heroes = ApiAction.save({name: name, age: age}, function(data) {
+      });
     }
 
   }

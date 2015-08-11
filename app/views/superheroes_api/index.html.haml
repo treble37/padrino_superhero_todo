@@ -5,13 +5,17 @@
         %tr
           %th SH Name
           %th SH Age
+          %th &nbsp;
+          %th &nbsp;
         %tr{"ng-repeat" => "superhero in superheroes track by $index"}
           %td
             %input{"type"=>"text", "value" => "{{superhero.superhero_name}}", "ng-model" => "superhero.superhero_name" }
           %td
             %input{"type"=>"text", "value" => "{{superhero.age}}", "ng-model" => "superhero.age" }
+          %td
+            %input{"type"=>"submit", "value"=>"Create New Hero", "ng-click" => "createSuperhero(superhero.superhero_name, superhero.age)"}
+          %td
+            %input{"type"=>"submit", "value"=>"Save Changes", "ng-click" => "updateSuperhero($index+1, superhero.superhero_name, superhero.age)"}
         %tr
-          %td
-            %input{"type"=>"submit", "value"=>"Save Changes"}
-          %td
+          %td{:colspan=>3}
             %input{"type"=>"button", "value"=>"Add Superhero", "ng-click" => "appendSuperheroFields()" }
