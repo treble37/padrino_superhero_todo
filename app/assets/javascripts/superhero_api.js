@@ -15,8 +15,9 @@
         isArray: true
         },
         create: {
+          url: '/api/create',
           method: "POST",
-          isArray: true
+          isArray: false 
         }
       });
 
@@ -58,7 +59,7 @@
     }
 
     $scope.createSuperhero = function(name, age) {
-      heroes = ApiAction.save({name: name, age: age}, function(data) {
+      heroes = ApiAction.create({superhero_name: name, age: age}, function(data) {
       });
     }
 
