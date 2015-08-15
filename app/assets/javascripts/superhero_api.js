@@ -11,6 +11,7 @@
           isArray: true
         },
         update: {
+        url: '/api/update',
         method: "PUT",
         isArray: true
         },
@@ -18,6 +19,11 @@
           url: '/api/create',
           method: "POST",
           isArray: false 
+        },
+        delete: {
+          url: '/api/delete',
+          method: "DELETE",
+          isArray: false
         }
       });
 
@@ -45,22 +51,17 @@
     }
 
     $scope.updateSuperhero = function(id, name, age) {
-      var hero = ApiAction.get({ id: id }, function() {
-      });
-      var single_hero;
-      hero.$promise.then(function(data) {
-        angular.forEach(data, function(item) {
-          single_hero = item;
-          ApiAction.update(single_hero, {});
-        });
-      }, function(data) {
-        //if error then...
-      });
+      var single_hero = {id: id, superhero_name: name, age: age};
+      ApiAction.update(single_hero, {});
     }
 
     $scope.createSuperhero = function(name, age) {
       heroes = ApiAction.create({superhero_name: name, age: age}, function(data) {
       });
+    }
+
+    $scope.deleteSuperhero = function(id) {
+      heroes = ApiAction.delete({id: id}, {});
     }
 
   }

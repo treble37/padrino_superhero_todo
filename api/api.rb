@@ -21,7 +21,11 @@ class Api < Grape::API
   end
 
   put :update do
-    @superhero = Superhero.update(id: params[:id], superhero_name: params[:superhero_name], age: params[:age])
+    @superhero = Superhero.update(params[:id], superhero_name: params[:superhero_name], age: params[:age])
     @superhero
+  end
+
+  delete :delete do
+    @superhero = Superhero.destroy(params[:id])
   end
 end

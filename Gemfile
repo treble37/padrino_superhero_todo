@@ -35,8 +35,6 @@ gem 'gon-sinatra'
 
 gem 'pry'
 
-#gem 'rack-cors', :require => 'rack/cors'
-
 # Or Padrino Edge
 # gem 'padrino', :github => 'padrino/padrino-framework'
 
