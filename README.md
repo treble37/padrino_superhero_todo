@@ -1,5 +1,8 @@
-# padrino_superhero_todo
-a todo app built on Padrino.rb
+## padrino_superhero_todo
+
+Description: a todo app built on Padrino.rb with Angular to explore Padrino and Angular
+
+###Resource Links
 
 API setup:
 
