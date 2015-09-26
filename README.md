@@ -2,6 +2,12 @@
 
 Description: a todo app built on Padrino.rb with Angular to explore Padrino and Angular
 
+Navigate to:
+
+http://localhost:3000/superheroes/api_index
+
+run `rake routes` to see a list of available routes
+
 ###Resource Links
 
 API setup:
